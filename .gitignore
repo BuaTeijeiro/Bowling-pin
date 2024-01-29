@@ -1,0 +1,10 @@
+#archivos con informacion privada solo para mí
+_private_*
+
+#archivos de python
+.spyproject
+__pycache__
+
+#archivos coverage
+.coverage
+*.py,cover
