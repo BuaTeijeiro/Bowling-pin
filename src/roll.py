@@ -24,3 +24,6 @@ class Roll:
             return 1
         else:
             return None
+        
+    def __eq__(self,other):
+        return self.getCharacter() == other.getCharacter() and self.getFrame() == other.getFrame()
