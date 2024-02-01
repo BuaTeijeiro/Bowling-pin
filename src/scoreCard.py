@@ -13,7 +13,7 @@ class ScoreCard():
         frame_roll = 1
         for char in self.getCard():
             rolls.append(Roll(char,frame))
-            if frame_roll == 2:
+            if frame_roll == 2 or char == 'X':
                 frame += 1
                 frame_roll = 1
             else:
