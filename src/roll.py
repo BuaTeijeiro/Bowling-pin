@@ -10,5 +10,6 @@ class Roll:
         return self.frame
     
     def computeBonusRolls(self):
-        if self.getCharacter().isdigit():
+        character = self.getCharacter()
+        if character == '-' or character.isdigit():
             return 0
