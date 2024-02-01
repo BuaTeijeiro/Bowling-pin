@@ -8,3 +8,7 @@ class Roll:
     
     def getFrame(self):
         return self.frame
+    
+    def computeBonusRolls(self):
+        if self.getCharacter().isdigit():
+            return 0
