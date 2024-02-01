@@ -10,8 +10,15 @@ class ScoreCard():
     def splitIntoRolls(self):
         rolls = []
         frame = 1
+        frame_roll = 1
         for char in self.getCard():
             rolls.append(Roll(char,frame))
+            if frame_roll == 2:
+                frame += 1
+                frame_roll = 1
+            else:
+                frame_roll += 1
+                
         
         return rolls
     
