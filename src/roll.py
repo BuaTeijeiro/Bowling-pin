@@ -2,12 +2,16 @@ class Roll:
     def __init__(self,character,frame):
         self.character = character
         self.frame = frame
+        self.bonusRolls = self.computeBonusRolls()
         
     def getCharacter(self):
         return self.character
     
     def getFrame(self):
         return self.frame
+    
+    def getBonusRolls(self):
+        return self.bonusRolls
     
     def computeBonusRolls(self):
         character = self.getCharacter()

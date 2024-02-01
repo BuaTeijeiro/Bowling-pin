@@ -29,4 +29,5 @@ def test_Roll_computeBonusRolls_Bonus_strike():
 def test_Roll_computeBonusRolls_Bonus_spare():
     firstRoll =  Roll(character = '/', frame = 3)
     assert firstRoll.computeBonusRolls() == 1
+
     
