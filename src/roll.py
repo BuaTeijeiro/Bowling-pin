@@ -16,3 +16,7 @@ class Roll:
             return 0
         elif character == 'X':
             return 2
+        elif character == '/':
+            return 1
+        else:
+            return None
