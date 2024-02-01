@@ -20,3 +20,8 @@ def test_Roll_computeBonusRolls_NoBonus_spareFrame10():
     firstRoll =  Roll(character = '/', frame = 10)
     assert firstRoll.computeBonusRolls() == 0
     
+@pytest.mark.computeBonusRolls
+def test_Roll_computeBonusRolls_Bonus_strike():
+    firstRoll =  Roll(character = 'X', frame = 3)
+    assert firstRoll.computeBonusRolls() == 2
+    

@@ -14,3 +14,5 @@ class Roll:
         frame = self.getFrame()
         if character == '-' or character.isdigit() or frame == 10:
             return 0
+        elif character == 'X':
+            return 2
