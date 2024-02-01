@@ -5,3 +5,6 @@ class Roll:
         
     def getCharacter(self):
         return self.character
+    
+    def getFrame(self):
+        return self.frame
