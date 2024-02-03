@@ -3,9 +3,13 @@ from src.roll import Roll
 class ScoreCard():
     def __init__(self,scores = '-' * 20):
         self.card = scores
+        self.rolls = self.splitIntoRolls()
         
     def getCard(self):
         return self.card
+    
+    def getRolls(self):
+        return self.rolls
     
     def splitIntoRolls(self):
         rolls = []
