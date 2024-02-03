@@ -30,9 +30,9 @@ class ScoreCard():
         score = 0
         for i in range(rolls[roll].getBonusRolls() + 1):
             if rolls[roll + i].getCharacter() != '/':
-                score += rolls[i].getThrownPins()
+                score += rolls[roll + i].getThrownPins()
+            else:
+                score += rolls[roll + i].getThrownPins()(rolls[roll + i - 1].getThrownPins())
         return score
     
 if __name__ == '__main__':
-    my_score = ScoreCard('8/549-XX5/53639/9/X')
-    a = my_score.computeRollPointsPlusBonus(0)
