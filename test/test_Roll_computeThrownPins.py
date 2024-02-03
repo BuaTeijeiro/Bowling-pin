@@ -15,3 +15,8 @@ def test_computeThrownPins_SomePins():
 def test_computeThrownPins_Strike():
     myRoll = Roll('X',2)
     assert myRoll.computeThrownPins() == 10
+    
+@pytest.mark.computeThrownPins
+def test_computeThrownPins_Spare():
+    myRoll = Roll('/',2)
+    assert myRoll.computeThrownPins()(2) == 8

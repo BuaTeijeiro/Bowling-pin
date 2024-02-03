@@ -33,6 +33,10 @@ class Roll:
             return int(character)
         elif character == 'X':
             return 10
+        elif character == '/':
+            return lambda x: 10-x
+        else:
+            return None
         
     def __eq__(self,other):
         return self.getCharacter() == other.getCharacter() and self.getFrame() == other.getFrame()
