@@ -22,12 +22,17 @@ class ScoreCard():
                 frame_roll = 1
             else:
                 frame_roll += 1
-                
         
         return rolls
     
+    def computeRollPointsPlusBonus(self,roll):
+        rolls = self.getRolls()
+        score = 0
+        for i in range(rolls[roll].getBonusRolls() + 1):
+            if rolls[roll + i].getCharacter() != '/':
+                score += rolls[i].getThrownPins()
+        return score
     
 if __name__ == '__main__':
-    my_scoreCard = ScoreCard('1-')
-    print(my_scoreCard.splitIntoRolls())
-        
+    my_score = ScoreCard('8/549-XX5/53639/9/X')
+    a = my_score.computeRollPointsPlusBonus(0)
