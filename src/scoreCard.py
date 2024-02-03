@@ -4,12 +4,16 @@ class ScoreCard():
     def __init__(self,scores = '-' * 20):
         self.card = scores
         self.rolls = self.splitIntoRolls()
+        self.totalScore = self.computeTotalScore()
         
     def getCard(self):
         return self.card
     
     def getRolls(self):
         return self.rolls
+    
+    def getTotalScore(self):
+        return self.totalScore
     
     def splitIntoRolls(self):
         rolls = []
