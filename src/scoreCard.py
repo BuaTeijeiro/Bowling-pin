@@ -35,4 +35,9 @@ class ScoreCard():
                 score += rolls[roll + i].getThrownPins()(rolls[roll + i - 1].getThrownPins())
         return score
     
-if __name__ == '__main__':
+    def computeTotalScore(self):
+        totalScore = 0
+        for i in range(len(self.getRolls())):
+            totalScore += self.computeRollPointsPlusBonus(i)
+        return totalScore
+            
