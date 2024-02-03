@@ -31,6 +31,8 @@ class Roll:
             return 0
         elif character.isdigit():
             return int(character)
+        elif character == 'X':
+            return 10
         
     def __eq__(self,other):
         return self.getCharacter() == other.getCharacter() and self.getFrame() == other.getFrame()
