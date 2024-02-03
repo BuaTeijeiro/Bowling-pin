@@ -3,6 +3,7 @@ class Roll:
         self.character = character
         self.frame = frame
         self.bonusRolls = self.computeBonusRolls()
+        self.thrownPins = self.computeThrownPins()
         
     def getCharacter(self):
         return self.character
@@ -12,6 +13,9 @@ class Roll:
     
     def getBonusRolls(self):
         return self.bonusRolls
+    
+    def getThrownPins(self):
+        return self.thrownPins
     
     def computeBonusRolls(self):
         character = self.getCharacter()
