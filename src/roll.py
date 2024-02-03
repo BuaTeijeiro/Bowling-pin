@@ -26,8 +26,11 @@ class Roll:
             return None
         
     def computeThrownPins(self):
-        if self.getCharacter() == '-':
+        character = self.getCharacter()
+        if character == '-':
             return 0
+        elif character.isdigit():
+            return int(character)
         
     def __eq__(self,other):
         return self.getCharacter() == other.getCharacter() and self.getFrame() == other.getFrame()
