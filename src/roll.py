@@ -35,10 +35,8 @@ class Roll:
             return 0
         elif character.isdigit():
             return int(character)
-        elif character == 'X':
+        elif character == 'X' or character == '/':
             return 10
-        elif character == '/':
-            return lambda x: 10-x
         else:
             return None
         

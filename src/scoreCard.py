@@ -33,10 +33,9 @@ class ScoreCard():
         rolls = self.getRolls()
         score = 0
         for i in range(rolls[roll].getBonusRolls() + 1):
-            if rolls[roll + i].getCharacter() != '/':
-                score += rolls[roll + i].getThrownPins()
-            else:
-                score += rolls[roll + i].getThrownPins()(rolls[roll + i - 1].getThrownPins())
+            score += rolls[roll + i].getThrownPins()
+            if rolls[roll + i].getCharacter() == '/':
+                score -= rolls[roll + i - 1].getThrownPins()
         return score
     
     def computeTotalScore(self):
