@@ -31,11 +31,12 @@ class ScoreCard():
     
     def computeRollPointsPlusBonus(self,roll):
         rolls = self.getRolls()
+        bonusRolls = rolls[roll].getBonusRolls()
         score = 0
-        for i in range(rolls[roll].getBonusRolls() + 1):
-            score += rolls[roll + i].getThrownPins()
-            if rolls[roll + i].getCharacter() == '/':
-                score -= rolls[roll + i - 1].getThrownPins()
+        for i in range(roll, roll + bonusRolls + 1):
+            score += rolls[i].getThrownPins()
+            if rolls[i].getCharacter() == '/':
+                score -= rolls[i - 1].getThrownPins()
         return score
     
     def computeTotalScore(self):
