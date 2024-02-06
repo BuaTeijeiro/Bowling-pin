@@ -33,13 +33,15 @@ class ScoreCard():
         return rolls
     
     def computeRollPointsPlusBonus(self,roll):
-        rolls = self.getRolls()
-        bonusRolls = rolls[roll].getBonusRolls()
+        mainRoll = self.getNthRoll(roll)
+        bonusRolls = mainRoll.getBonusRolls()
         score = 0
         for i in range(roll, roll + bonusRolls + 1):
-            score += rolls[i].getThrownPins()
-            if rolls[i].getCharacter() == '/':
-                score -= rolls[i - 1].getThrownPins()
+            currentRoll =self.getNthRoll(i) 
+            score += currentRoll.getThrownPins()
+            if currentRoll.getCharacter() == '/':
+                previousRoll = self.getNthRoll(i - 1)
+                score -= previousRoll.getThrownPins()
         return score
     
     def computeTotalScore(self):
@@ -47,8 +49,3 @@ class ScoreCard():
         for i in range(len(self.getRolls())):
             totalScore += self.computeRollPointsPlusBonus(i)
         return totalScore
-            
-if __name__ == '__main__':
-    my_card = ScoreCard("12345123451234512345")
-    a = my_card.getNthRoll(2)
-    print(a.getCharacter(),a.getFrame())
