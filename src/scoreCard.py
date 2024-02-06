@@ -38,10 +38,8 @@ class ScoreCard():
         score = 0
         for i in range(roll, roll + bonusRolls + 1):
             currentRoll =self.getNthRoll(i) 
-            score += currentRoll.getThrownPins()
-            if currentRoll.getCharacter() == '/':
-                previousRoll = self.getNthRoll(i - 1)
-                score -= previousRoll.getThrownPins()
+            previousRoll = self.getNthRoll(i - 1)
+            score += currentRoll.computeThrownPins(previousRoll.computeThrownPins())               
         return score
     
     def computeTotalScore(self):

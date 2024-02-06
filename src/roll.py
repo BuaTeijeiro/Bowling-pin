@@ -3,7 +3,6 @@ class Roll:
         self.character = character
         self.frame = frame
         self.bonusRolls = self.computeBonusRolls()
-        self.thrownPins = self.computeThrownPins()
         
     def getCharacter(self):
         return self.character
@@ -13,9 +12,6 @@ class Roll:
     
     def getBonusRolls(self):
         return self.bonusRolls
-    
-    def getThrownPins(self):
-        return self.thrownPins
     
     def computeBonusRolls(self):
         character = self.getCharacter()
@@ -29,14 +25,16 @@ class Roll:
         else:
             return None
         
-    def computeThrownPins(self):
+    def computeThrownPins(self, previous_round = 0):
         character = self.getCharacter()
         if character == '-':
             return 0
         elif character.isdigit():
             return int(character)
-        elif character == 'X' or character == '/':
+        elif character == 'X':
             return 10
+        elif character == '/':
+            return 10 - previous_round
         else:
             return None
         
