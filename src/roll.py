@@ -21,7 +21,7 @@ class Roll:
         else:
             return None
         
-    def computeThrownPins(self, previous_round = 0):
+    def computeThrownPins(self, previousRoundPins = 0):
         character = self.getCharacter()
         if character == '-':
             return 0
@@ -30,7 +30,7 @@ class Roll:
         elif character == 'X':
             return 10
         elif character == '/':
-            return 10 - previous_round
+            return 10 - previousRoundPins
         else:
             return None
         
