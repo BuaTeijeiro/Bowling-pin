@@ -12,6 +12,9 @@ class ScoreCard():
     def getRolls(self):
         return self.rolls
     
+    def getNthRoll(self,n):
+        return self.getRolls()[n]
+    
     def getTotalScore(self):
         return self.totalScore
     
@@ -45,3 +48,7 @@ class ScoreCard():
             totalScore += self.computeRollPointsPlusBonus(i)
         return totalScore
             
+if __name__ == '__main__':
+    my_card = ScoreCard("12345123451234512345")
+    a = my_card.getNthRoll(2)
+    print(a.getCharacter(),a.getFrame())
