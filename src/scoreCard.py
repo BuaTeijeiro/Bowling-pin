@@ -4,7 +4,6 @@ class ScoreCard():
     def __init__(self,scores = '-' * 20):
         self.card = scores
         self.rolls = self.splitIntoRolls()
-        self.totalScore = self.computeTotalScore()
         
     def getCard(self):
         return self.card
@@ -14,9 +13,6 @@ class ScoreCard():
     
     def getNthRoll(self,n):
         return self.getRolls()[n]
-    
-    def getTotalScore(self):
-        return self.totalScore
     
     def splitIntoRolls(self):
         rolls = []
@@ -34,7 +30,7 @@ class ScoreCard():
     
     def computeRollPointsPlusBonus(self,roll):
         mainRoll = self.getNthRoll(roll)
-        bonusRolls = mainRoll.getBonusRolls()
+        bonusRolls = mainRoll.computeBonusRolls()
         score = 0
         for i in range(roll, roll + bonusRolls + 1):
             currentRoll =self.getNthRoll(i) 
